@@ -1,0 +1,24 @@
+<mat-card [formGroup]="form" (ngSubmit)="login()">
+
+  <mat-card-title>Login form</mat-card-title>
+
+  <mat-card-content>
+    <mat-form-field>
+      <input formControlName="username" matInput placeholder="Username">
+      <mat-error *ngIf="form.get('username').invalid">Field cannot be empty</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="password" matInput placeholder="Password">
+      <mat-error *ngIf="form.get('password').invalid">Field cannot be empty</mat-error>
+    </mat-form-field>
+    <mat-error *ngIf="form.touched && credentialsError">Credentials are invalid</mat-error>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button [disabled]="!form.valid" mat-button (click)="login()">Submit</button>
+  </mat-card-actions>
+
+</mat-card>
+
+
+

@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <span>Sienn recruits app</span>
+
+  <span class="example-fill-remaining-space"></span>
+
+  <button mat-button (click)="logout()">Log out</button>
+</mat-toolbar>
+
+<app-add-product></app-add-product>
+
+<app-list [products]="products.products$ | async">
+</app-list>
